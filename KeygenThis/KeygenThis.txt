@@ -1,0 +1,11 @@
+Serial consists of 4 parts (They can be different in order):
+
+ALL IN DECIMAL....
+
+1st==> namelength
+
+2nd==> constant number (110 or 95 or 85)
+
+3rd==> Summing of name chars
+
+4th==> First char in name 
