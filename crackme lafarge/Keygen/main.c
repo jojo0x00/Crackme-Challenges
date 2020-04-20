@@ -29,7 +29,7 @@ int main()
     int ECX = 0xA; //DEVISOR
     int EDX = 0;   //REMAINDER
 
-    char name[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    char name[10] = {0};
     int i, j;
 
     printf("************************************************\n");
