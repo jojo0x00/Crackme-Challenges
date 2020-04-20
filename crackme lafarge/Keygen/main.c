@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-int u = 0;
-
 int array_to_num(int arr[])
 {
     unsigned int result;
