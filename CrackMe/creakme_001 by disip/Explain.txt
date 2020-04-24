@@ -1,0 +1,65 @@
+Name: Must be at least 3 digits
+-----
+
+First character (index = 0): 'A'
+------------------------------
+
+Add 61 to Bh ==> (0x61 + index) + name[0] 
+
+result_1: (0x61 + 0) + 0x41  = 0x6141
+
+result_2 = result_1 + 1 = 0x6142
+
+bx = 0x6142 ==> 'Ba'  (Be carefull with little endian)
+_____________________________________________________________
+
+Second character (index = 1): 'A'
+------------------------------
+Add 61 to Bh ==> (0x61 + index) + name[1] 
+
+result_1: (0x61 + 1) + 0x41  = 0x6241
+
+result_2 = result_1 + 1 = 0x6242 
+
+bx = 0x6242 ==> 'Bb'  (Be carefull with little endian)
+_____________________________________________________________
+
+Third character (index = 2): 'A'
+--------------------------------
+
+Add 61 to Bh ==> (0x61 + index) + name[1] 
+
+result_1: (0x61 + 2) + 0x41  = 0x6341
+
+result_2 = result_1 + 1 = 0x6342
+
+bx = 0x6342 ==> 'Bc'  (Be carefull with little endian)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Pass:
+------
+
+First Segment (2 digits): 'Ba'
+-------------------------
+cx = 'Ba' == 6142
+
+Second Segment (2 digits): 'Bb'
+-------------------------
+cx = 'Ba' == 6242
+
+Third Segment (2 digits): 'Bc'
+-------------------------
+cx = 'Ba' == 6342
+
+
+for (int i = 0; i < strlen(name); i++){
+	
+	if (cx == bx)
+		index++
+
+}
+Conclusion password is "BaBbBc"
+1- add 1 for each char of name
+2- add from [a-z] after each char of name "abcdefg......"
+
